@@ -1,6 +1,6 @@
 package com.example.spring01.model.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MemberDTO {
 	private String userId;

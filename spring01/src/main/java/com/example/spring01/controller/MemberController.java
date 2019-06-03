@@ -1,6 +1,9 @@
 package com.example.spring01.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 import org.slf4j.Logger;
@@ -27,6 +30,14 @@ public class MemberController {
 		List<MemberDTO> list = memberService.memberList();
 		model.addAttribute("list", list);
 		logger.info("list: " + list.toString());
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, new Locale("ko", "KR"));
+		String formattedDate = dateFormat.format(date);
+		logger.info("formattedDate: " + formattedDate);
+		
+		model.addAttribute("serverTime", formattedDate);
+		
 		return "member/member_list";
 	}
 	

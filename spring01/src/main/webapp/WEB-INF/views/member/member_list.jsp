@@ -24,7 +24,7 @@
 				<td>${row.userId}</td>
 				<td><a href="${path}/member/view.do?userId=${row.userId}">${row.name}</a></td>
 				<td>${row.email}</td>
-				<td>${row.joinDate}</td>
+				<td>${serverTime} ${row.joinDate}</td>
 			</tr>
 		</c:forEach>
 	</table>
