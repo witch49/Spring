@@ -175,6 +175,16 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!-- 자료가 리턴될 때 xml 형식이나 json 형식으로 리턴된다는 것을 알려줘야 함 
+			xml : <> </> / json : {"key":"value"} 
+			json 의 string 형식으로 전달해주는 라이브러리를 추가 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.3</version>
+		</dependency>
 
 	</dependencies>
 	<build>
