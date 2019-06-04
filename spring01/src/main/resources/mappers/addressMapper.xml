@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="address">
+	
+	<!-- resultType을 alias 처리하기 위해서는 src/main/resources/mybatis-config.xml에서 설정하기 -->
+	<select id="addressList" resultType="addressDto">
+		select * from address_book
+		order by addr_no
+	</select>
+	
+	<insert id="insertAddress">
+		insert into address_book values (test_sequence.NEXTVAL, #{addr_name}, #{addr_tel}, #{addr_email}, #{addr_address}, #{addr_memo})
+	</insert>
+	
+	<select id="viewAddress" resultType="addressDto">
+		select * from address_book where addr_no=#{addr_no}
+	</select>
+	
+	<delete id="deleteAddress">
+		delete from address_book where addr_no=#{addr_no}
+	</delete>
+	
+	<update id="updateAddress">
+		update address_book
+		set addr_name=#{addr_name}, addr_tel=#{addr_tel}, addr_email=#{addr_email}, addr_address=#{addr_address}, addr_memo=#{addr_memo}
+		where addr_no=#{addr_no}
+	</update>
+	
+</mapper>
+
+
+
+
+

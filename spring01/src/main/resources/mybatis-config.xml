@@ -4,6 +4,7 @@
 	<!-- 별칭(alias) 부여 -->
 	<typeAliases>
 		<typeAlias alias="memberDto" type="com.example.spring01.model.dto.MemberDTO" />
+		<typeAlias alias="addressDto" type="com.example.spring01.model.dto.AddressDTO" />
 	</typeAliases>
 
 </configuration>

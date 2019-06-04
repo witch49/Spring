@@ -21,7 +21,7 @@
 	
 	<!-- 회원 정보 삭제 -->
 	<delete id="deleteMember">
-		
+		delete from member where userid=#{userid}
 	</delete>
 	
 	<!-- 회원 정보 수정 -->
