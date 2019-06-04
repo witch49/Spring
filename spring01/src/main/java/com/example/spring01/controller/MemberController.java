@@ -59,4 +59,26 @@ public class MemberController {
 		return "member/view";
 	}
 	
+	@RequestMapping("member/update.do")
+	public String update(@ModelAttribute MemberDTO dto, Model model) {
+		boolean result = memberService.checkPwd(dto.getUserid(), dto.getPasswd());
+		logger.info("비밀번호 확인: " + result);
+		
+		if(result) {	// 비밀번호가 맞으면
+			memberService.updateMember(dto);	// 레코드 수정
+			return "redirect:/member/list.do";
+		} else {	// 비밀번호가 틀리면
+			MemberDTO dto2 = memberService.viewMember(dto.getUserid());
+			dto.setJoin_date(dto2.getJoin_date());	// 날짜가 지워지지 않도록 설정
+			model.addAttribute("dto", dto);
+			model.addAttribute("message", "비밀번호가 틀렸습니다.");
+			return "member/view";	// 수정 페이지로 돌아가기
+		}
+		
+	}
+	
+//	@RequestMapping("member/delete.do")
+//	public 
+	
+	
 }

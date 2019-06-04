@@ -3,16 +3,37 @@
 
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="member">
+
 	<!-- resultType을 alias 처리하기 위해서는 src/main/resources/mybatis-config.xml에서 설정하기 -->
 	<select id="memberList" resultType="memberDto">
 		select * from member
 		order by name
 	</select>
+	
 	<insert id="insertMember">
 		insert into member(userid, passwd, name, email) values
 		(#{userid}, #{passwd}, #{name}, #{email})
 	</insert>
+	
 	<select id="viewMember" resultType="memberDto">
 		select * from member where userid=#{userid}
 	</select>
+	
+	<!-- 회원 정보 삭제 -->
+	<delete id="deleteMember">
+		
+	</delete>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMember">
+		update member set passwd=#{passwd}, name=#{name}, email=#{email}
+		where userid=#{userid}
+	</update>
+	
+	<!-- 회원 정보 수정 시 비밀번호 체크 -->
+	<select id="checkPw" resultType="int">
+		select count(*) from member
+		where userid=#{userid} and passwd=#{passwd}
+	</select>
+	
 </mapper>

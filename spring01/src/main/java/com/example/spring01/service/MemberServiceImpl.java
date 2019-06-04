@@ -40,12 +40,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void updateMember(MemberDTO vo) {
-
+		memberDao.updateMember(vo);
 	}
 
 	@Override
 	public boolean checkPwd(String userid, String passwd) {
-		return false;
+		return memberDao.checkPwd(userid, passwd);
 	}
 
 }

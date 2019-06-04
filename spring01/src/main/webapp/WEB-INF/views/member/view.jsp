@@ -7,6 +7,20 @@
 <meta charset="UTF-8">
 <title>회원 상세화면</title>
 <%@ include file="../include/header.jsp" %>
+<script>
+	$(function(){
+		$("#btnUpdate").click(function() {
+			document.form1.action="${path}/member/update.do";
+			document.form1.submit();
+		});
+		$("#btnDelete").click(function() {
+			if(confirm("삭제하시겠습니까?")) {
+				document.form1.action="${path}/member/delete.do";
+				document.form1.submit();
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<%@ include file="../include/menu.jsp" %>
@@ -19,7 +33,7 @@
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" name="password" /></td>
+				<td><input type="password" name="passwd" /></td>
 			</tr>
 			<tr>
 				<td>이름</td>
