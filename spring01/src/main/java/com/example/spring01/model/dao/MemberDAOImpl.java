@@ -54,11 +54,13 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public boolean checkPwd(String userid, String passwd) {
+		logger.info("checkPwd --------------- 아이디:" + userid + " /패스워드: " + passwd);
 		boolean result = false;
 		Map<String, String> map = new HashMap<>();
 		map.put("userid", userid);
 		map.put("passwd", passwd);
 		int count = sqlSession.selectOne("member.checkPw", map);
+		logger.info("---------- count: " + count);
 		if (count == 1)
 			result =  true;
 		return result;

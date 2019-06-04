@@ -29,8 +29,7 @@
 		<table border="1" width="400px">
 			<tr>
 				<td>아이디</td>
-				<%-- <input type="text" name="userid" value="${dto.userid}" onfocus="this.blur()" readonly/> --%>
-				<td>${dto.userid}</td>
+				<td><input type="text" name="userid" value="${dto.userid}" onfocus="this.blur()" readonly/></td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
