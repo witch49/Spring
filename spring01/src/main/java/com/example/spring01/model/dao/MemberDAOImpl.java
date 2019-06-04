@@ -22,7 +22,7 @@ public class MemberDAOImpl implements MemberDAO {
 	private static final Logger logger = LoggerFactory.getLogger(MemberDAOImpl.class);
 
 	@Inject
-	SqlSession sqlSession;
+	SqlSession sqlSession;	// SqlSession을 사용하면 자동으로 commit됨
 	
 	@Override
 	public List<MemberDTO> memberList() {
@@ -32,16 +32,16 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public void insertMember(MemberDTO vo) {
-
+		sqlSession.insert("member.insertMember", vo);
 	}
 
 	@Override
-	public MemberDTO viewMember(String userId) {
-		return null;
+	public MemberDTO viewMember(String userid) {
+		return sqlSession.selectOne("member.viewMember", userid);
 	}
 
 	@Override
-	public void deleteMember(String userId) {
+	public void deleteMember(String userid) {
 
 	}
 
@@ -51,7 +51,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public boolean checkPwd(String userId, String password) {
+	public boolean checkPwd(String userid, String passwd) {
 		return false;
 	}
 

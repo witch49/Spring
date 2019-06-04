@@ -1,40 +1,39 @@
 package com.example.spring01.model.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class MemberDTO {
-	private String userId;
-	private String password;
+	private String userid;
+	private String passwd;
 	private String name;
 	private String email;
-	private Date joinDate;
+	private Date join_date;
 
-	public MemberDTO(String userId, String password, String name, String email, Date joinDate) {
-		this.userId = userId;
-		this.password = password;
+	public MemberDTO(String userid, String passwd, String name, String email, Date join_date) {
+		this.userid = userid;
+		this.passwd = passwd;
 		this.name = name;
 		this.email = email;
-		this.joinDate = joinDate;
+		this.join_date = join_date;
 	}
 
 	public MemberDTO() {
-
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPasswd() {
+		return passwd;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 
 	public String getName() {
@@ -53,18 +52,18 @@ public class MemberDTO {
 		this.email = email;
 	}
 
-	public Date getJoinDate() {
-		return joinDate;
+	public Date getJoin_date() {
+		return join_date;
 	}
 
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
+	public void setJoin_date(Date join_date) {
+		this.join_date = join_date;
 	}
 
 	@Override
 	public String toString() {
-		return "MemberDTO [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email
-				+ ", joinDate=" + joinDate + "]";
+		return "MemberDTO [userid=" + userid + ", passwd=" + passwd + ", name=" + name + ", email=" + email
+				+ ", join_date=" + join_date + "]";
 	}
 
 }

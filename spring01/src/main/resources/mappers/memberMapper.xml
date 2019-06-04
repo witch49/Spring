@@ -8,18 +8,11 @@
 		select * from member
 		order by name
 	</select>
+	<insert id="insertMember">
+		insert into member(userid, passwd, name, email) values
+		(#{userid}, #{passwd}, #{name}, #{email})
+	</insert>
+	<select id="viewMember" resultType="memberDto">
+		select * from member where userid=#{userid}
+	</select>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

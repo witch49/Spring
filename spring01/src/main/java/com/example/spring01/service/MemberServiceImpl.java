@@ -25,16 +25,16 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void insertMember(MemberDTO vo) {
-
+		memberDao.insertMember(vo);
 	}
 
 	@Override
-	public MemberDTO viewMember(String userId) {
-		return null;
+	public MemberDTO viewMember(String userid) {
+		return memberDao.viewMember(userid);
 	}
 
 	@Override
-	public void deleteMember(String userId) {
+	public void deleteMember(String userid) {
 
 	}
 
@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public boolean checkPwd(String userId, String password) {
+	public boolean checkPwd(String userid, String passwd) {
 		return false;
 	}
 
