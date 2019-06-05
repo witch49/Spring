@@ -24,6 +24,14 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error500</location><!-- 500 에러 발생시 요청할 주소 -->
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/error/error404.jsp</location><!-- 404 에러 발생시 요청할 주소 -->
+	</error-page>
 	<!-- 한글 처리를 위한 인코딩 필터 -->
 	<filter>
 		<filter-name>encoding</filter-name>
