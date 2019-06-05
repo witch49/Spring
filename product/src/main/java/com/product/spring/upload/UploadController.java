@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+//@RequestMapping("/spring/*")	// 공통적인 URL Mapping
 public class UploadController {
 	private static final Logger LOG = LoggerFactory.getLogger(UploadController.class);
 	
@@ -22,7 +23,8 @@ public class UploadController {
 	@Resource(name="uploadPath")
 	String uploadPath;
 	
-	@RequestMapping(value="/upload/uploadForm", method=RequestMethod.GET)
+	
+	@RequestMapping(value="upload/uploadForm", method=RequestMethod.GET)
 	public void uploadForm() {
 		LOG.info("uploadForm 실행");
 		/* /upload/uploadForm.jsp 로 포워딩 */	
@@ -35,7 +37,7 @@ public class UploadController {
 	 * -> 지정된 디렉토리에 저장
 	 * */
 	
-	@RequestMapping(value="/upload/uploadForm", method=RequestMethod.POST)
+	@RequestMapping(value="upload/uploadForm", method=RequestMethod.POST)
 	public ModelAndView uploadForm(MultipartFile file, ModelAndView mav) throws Exception {
 		LOG.info("파일 이름: " + file.getOriginalFilename() + ", 파일 크기: " + file.getSize() + ", 컨텐츠 타입: " + file.getContentType());
 		String savedName = file.getOriginalFilename();

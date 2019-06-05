@@ -5,8 +5,7 @@
 <mapper namespace="product">
 	<!-- resultType을 alias 처리하기 위해서는 src/main/resources/mybatis-config.xml에서 설정하기 -->
 	<select id="list_product" resultType="productDto" >
-		select * from product
-		order by product_name
+		select * from product order by product_name
 	</select>
 </mapper>
 
