@@ -1,0 +1,67 @@
+﻿<< 상품 관리 프로젝트 >>
+
+일반적인 방식 
+
+비동기적 방식(Ajax)
+
+
+1) 상품 테이블 작성
+
+create table product(
+	product_id number,
+	product_name varchar2(50),
+	product_price number default 0,
+	description clob,
+	picture_url varchar2(500),
+	primary key(product_id)
+);
+
+// varchar2는 최대 4000글자까지 가능
+// 4천자 넘는 데이터는 clob를 사용해 저장
+// clob : 최대 4G 까지 입력 가능, 하나의 테이블에서 여러 컬럼에 사용 및 검색 가능
+// long : 최대 2G 까지 입력 가능, 하나의 테이블에서 한 개 컬럼만 사용 가능, 검색 불가능
+
+
+2) 데이터 삽입
+
+insert into product values(1, '레몬', 1500, '레몬에 포함된 구연산은 피로 회복에 좋다. 또한 비타민 C도 풍부하다.', 'lemon.jpg');
+insert into product values(2, '오렌지', 2000, '비타민 C가 풍부하다. 생과일 주스로 마시면 좋다.', 'orange.jpg');
+insert into product values(3, '키위', 3000, '다이어트나 미용에 좋다.', 'kiwi.jpg');
+insert into product values(4, '포도', 5000, '폴리페놀을 다량 함유하고 있어 항산화 작용을 한다.', 'grape.jpg');
+insert into product values(5, '딸기', 8000, '비타민 C나 플라보노이드를 다량 함유하고 있다.', 'strawberry.jpg');
+insert into product values(6, '귤', 7000, '시네피린을 함유하고 있어 감기 예방에 좋다.', 'tangerine.jpg');
+
+
+3) 상품 코드를 위한 시퀀스 작성(MySQL의 auto_increment)
+
+create sequence seq_product
+start with 10
+increment by 1;
+// 10번부터 1씩 증가
+
+insert into product values (seq_product.nextval, '사과', 1500, '맛있는 사과이다.', 'apple.jpg');
+
+
+4) 이미지 다운로드 링크
+
+http://mannaedu.com/bbs/board.php?bo_table=pds&wr_id=37&page=3
+
+
+5) https://mvnrepository.com/ 에서 commons-fileupload 검색해 첫번째꺼를 pom.xml에 추가
+```text
+https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+```
+
+---------------------------------------------------------------------------------------------------------
+
+일반 사용자 : 상품 목록 보기, 장바구니 담기, 장바구니 보기
+
+관리자 : 상품 등록, 상품 수정/삭제
+
+
+
+model.shop.dto.ProductDTO.java
+
+
+
+
