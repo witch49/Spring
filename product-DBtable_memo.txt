@@ -62,6 +62,3 @@ https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
 
 model.shop.dto.ProductDTO.java
 
-
-
-
