@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div align="center">
-		<a href="${path}/upload/uploadForm" >파일 업로드</a>&nbsp;&nbsp;
+		<a href="${path}/upload/uploadForm" >파일 업로드</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="${path}/shop/product/list.do" >상품 목록</a>
 	</div>
 	<hr><br>

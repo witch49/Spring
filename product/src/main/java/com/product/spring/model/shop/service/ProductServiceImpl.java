@@ -15,21 +15,25 @@ public class ProductServiceImpl implements ProductService {
 	@Inject
 	ProductDAO productDao;
 	
+	// 1. 상품 목록
 	@Override
 	public List<ProductDTO> listProduct() {
 		return productDao.listProduct();
 	}
 
+	// 2. 상품 상세
 	@Override
 	public ProductDTO detailProduct(int product_id) {
-		return null;
+		return productDao.detailProduct(product_id);
 	}
 
+	// 3. 상품 수정
 	@Override
 	public void updateProduct(ProductDTO dto) {
 
 	}
 
+	// 4. 상품 삭제
 	@Override
 	public void deleteProduct(ProductDTO dto) {
 

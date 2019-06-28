@@ -16,14 +16,16 @@ public class ProductDAOImpl implements ProductDAO {
 	@Inject
 	SqlSession sqlSession;
 	
+	// 1. 상품 목록
 	@Override
 	public List<ProductDTO> listProduct() {
 		return sqlSession.selectList("product.list_product");
 	}
 
+	// 2. 상품 상세
 	@Override
 	public ProductDTO detailProduct(int product_id) {
-		return null;
+		return sqlSession.selectOne("product.detail_product", product_id);
 	}
 
 	@Override
