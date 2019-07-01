@@ -6,6 +6,7 @@
 	<!-- 별칭(alias) 부여 -->
 	<typeAliases>
 		<typeAlias alias="productDto" type="com.product.spring.model.shop.dto.ProductDTO" />
+		<typeAlias alias="cartDto" type="com.product.spring.model.shop.dto.CartDTO" />
 	</typeAliases>
 
 </configuration>

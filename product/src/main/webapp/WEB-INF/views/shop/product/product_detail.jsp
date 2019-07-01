@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 목록</title>
+<title>상품 상세</title>
 <%@ include file="../../include/header.jsp" %>
 </head>
 <body>
@@ -31,7 +31,7 @@
 						<tr align="center">
 							<td colspan="2">
 								<form name="form1" method="post" action="${path}/shop/cart/insert.do">
-									<input type="hidden" name="productId" value="${vo.product_id}">
+									<input type="hidden" name="product_id" value="${vo.product_id}">
 									<select name="amount">
 										<c:forEach begin="1" end="10" var="i">
 											<option value="${i}">${i}</option>
