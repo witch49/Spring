@@ -11,7 +11,7 @@
 	
 	
 	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-	  <a class="navbar-brand" href="#">Navbar</a>
+	  <a class="navbar-brand" href="#">Navbar</a> 
 
 	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    <ul class="navbar-nav">
